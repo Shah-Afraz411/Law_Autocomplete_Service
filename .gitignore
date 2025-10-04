@@ -1,0 +1,185 @@
+############################################
+# Python / FastAPI / Streamlit Project
+# Autocomplete Service (.gitignore)
+############################################
+
+# -----------------------------
+# Python bytecode / cache
+# -----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# -----------------------------
+# Virtual environments
+# -----------------------------
+.venv/
+venv/
+ENV/
+env/
+
+
+# -----------------------------
+# Environment & secrets
+# -----------------------------
+# Keep example file – ignore real env files
+.env
+.env.*
+!.env.example
+env
+
+# Service account / cloud keys (NEVER commit)
+key.json
+*.key.json
+*.pem
+*.p12
+
+# -----------------------------
+# Build / packaging artifacts
+# -----------------------------
+build/
+dist/
+wheelhouse/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# -----------------------------
+# Dependency / lock artifacts (optional)
+# Uncomment if you generate these and don't want them committed
+# Pipfile.lock
+# poetry.lock
+# requirements-lock.txt
+
+# -----------------------------
+# Logs & runtime output
+# -----------------------------
+logs/
+*.log
+*.out
+*.err
+
+# -----------------------------
+# Coverage / test artifacts
+# -----------------------------
+.coverage
+.coverage.*
+htmlcov/
+pytestdebug.log
+.pytest_cache/
+.tox/
+.nox/
+
+# -----------------------------
+# Type checking / lint caches
+# -----------------------------
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# -----------------------------
+# C extensions
+# -----------------------------
+*.so
+
+# -----------------------------
+# Jupyter / notebooks
+# -----------------------------
+.ipynb_checkpoints/
+*.ipynb
+
+# -----------------------------
+# IDE / Editor settings
+# -----------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*.orig
+
+# -----------------------------
+# OS / file system artifacts
+# -----------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -----------------------------
+# Streamlit
+# -----------------------------
+.streamlit/secrets.toml
+# Allow config to be versioned if desired
+# .streamlit/config.toml
+
+# -----------------------------
+# Node (in case of future UI build tooling)
+# -----------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# -----------------------------
+# Docker auxiliary
+# -----------------------------
+# Keep Dockerfiles & compose files – ignore overrides & local artifacts
+docker-compose.override.yml
+docker/*.log
+
+# -----------------------------
+# Temporary files / scratch
+# -----------------------------
+*.tmp
+*.temp
+*.bak
+*.retry
+*.swp
+*.lock
+
+# -----------------------------
+# Cache dirs
+# -----------------------------
+.cache/
+.parsed/
+.tmp/
+
+# -----------------------------
+# Generated API docs (decide if you want to commit)
+# If openapi.json is auto-generated each run, ignore it; otherwise comment this out.
+# -----------------------------
+# docs/openapi.json
+
+# -----------------------------
+# Profiling
+# -----------------------------
+.prof
+*.prof
+.profraw
+
+# -----------------------------
+# Misc archives
+# -----------------------------
+*.tar
+*.tar.gz
+*.zip
+*.7z
+*.gz
+
+# -----------------------------
+# IntelliJ / JetBrains
+# -----------------------------
+*.iml
+out/
+
+# -----------------------------
+# VS Code local history
+# -----------------------------
+.history/
+
+############################################
+# End of .gitignore
+############################################
