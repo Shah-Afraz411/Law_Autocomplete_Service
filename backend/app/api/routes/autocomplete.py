@@ -23,6 +23,35 @@ async def autocomplete_endpoint(
     user_id: UUID = Depends(authenticate),
     service: AutocompleteService = Depends(get_autocomplete_service)
 ):
+    """
+    Generate law-focused autocomplete suggestions for partial user input with their law categories for the given input..
+
+      * Restrict suggestions to one or more categories of BGB law.
+      * Request output in a target output_language (ISO 639-1 code).
+
+        Invalid or unsupported languages will fall back to the authenticated user’s
+        profile preference, and then to English.
+
+    Args:
+        request (AutocompleteRequest):  
+            - input (str): non-empty partial text to complete.  
+            - max_predictions (int): number of suggestions (1–20, default 5).  
+            - categories (List[str], optional): list of law categories to bias suggestions.  
+            - output_language (str, optional): ISO 639-1 code for the response language.
+        operations_service (OperationsService):  
+            Service layer dependency, automatically injected after authentication.
+
+    Returns:
+        ResponseModel:  
+            On success (success=True), data.suggestions is a list of objects, each with:
+              - text (str): the completion string.
+              - category (str, optional): the law category, if assigned.
+
+    Raises:
+        HTTPException (422): if input is empty or whitespace.
+        HTTPException (502): if LLM generation fails internally.
+
+    """
     try:
         suggestions = await service.get_autocomplete(
             user_id=user_id,
